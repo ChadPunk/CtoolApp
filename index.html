@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Slideout Demo</title>
+    <meta http-equiv="cleartype" content="on">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+        margin:0;
+      }
+
+      .slideout-menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        background: #F2F2F2;
+        width: 256px;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        display: none;
+      }
+
+      .slideout-panel {
+        background: maroon;
+        padding:15px;
+        margin: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        will-change: transform;
+      }
+
+      .slideout-open,
+      .slideout-open body,
+      .slideout-open .slideout-panel {
+        overflow: hidden;
+      }
+
+      .slideout-open .slideout-menu {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav id="menu">
+      <div class="menu_head">
+      <h2>Welcome<i class="fa fa-star" aria-hidden="true"></i></h2>
+    </div>
+    <div class="link_pan">
+      <ul>
+        <li>Home</li>
+        <li>Directory</li>
+        <li>About Us</li>
+        <li>Website</li>
+        <li>Look Up</li>
+        <li>Notes</li>
+      </ul>
+    </div>
+    </nav>
+
+    <main id="panel">
+      <header>
+        <span class="toggle-button fix_line"><i class="fa fa-bars" aria-hidden="true"></i></span>
+        <h2 class="fix_line">Home</h2>
+      </header>
+    </main>
+    <section class="content">
+      Test
+    </section>
+
+    <script src="dist/slideout.min.js"></script>
+    <script>
+      var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'padding': 256,
+        'tolerance': 70
+      });
+
+      // Toggle button
+      document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+    </script>
+
+  </body>
+</html>

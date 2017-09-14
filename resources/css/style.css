@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+@keyframes slideInFromTop {
+  /*Add to other style sheet animation.css*/
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#show_notify {
+  background-color: #33ACFF;
+  width: 100%;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+
+#show_notify p {
+  display: inline;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.fix_line{
+  color: white;
+  font-size: 25px;
+  display: inline;
+  vertical-align: middle;
+}
+
+h2.fix_line{
+  margin-left: 30px;
+}
+
+.content{
+  padding-top: 80px;
+  background: #FFF;
+  height: 900px;
+}
+
+.menu_head{
+  width: 100%;
+  margin: 0;
+  padding: 25px;
+  background: #EEEEEE;
+}
+
+.fa-star{
+  color: gold !important;
+  padding-left: 5px;
+}
+
+ul{
+  list-style: none;
+  padding: 0 !important;
+}
+
+li{
+  font-size: 20px;
+  vertical-align: middle;
+  padding: 15px;
+  margin: 10px;
+  background: #EEEEEE;
+}
+
+.link_pan{
+  margin: 0 !important;
+  width: 100%;
+}
