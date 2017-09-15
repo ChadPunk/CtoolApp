@@ -49,11 +49,19 @@ h2.fix_line{
   height: 900px;
 }
 
-.menu_head{
+.logo{
   width: 100%;
-  margin: 0;
-  padding: 25px;
   background: #EEEEEE;
+}
+
+.logo img{
+  height: 100px;
+  width: 100%;
+}
+
+.logo h2{
+  text-align: center;
+  padding: 5px;
 }
 
 .fa-star{
@@ -74,7 +82,12 @@ li{
   background: #EEEEEE;
 }
 
-.link_pan{
+li a,
+li a:hover{
+  color: black;
+  text-decoration: none;
+}
 
+.link_pan{
   width: 100%;
 }
