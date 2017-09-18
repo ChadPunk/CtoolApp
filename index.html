@@ -1,65 +1,77 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Slideout Demo</title>
-    <meta http-equiv="cleartype" content="on">
-    <meta name="MobileOptimized" content="320">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./resources/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <style>
-      body {
-        width: 100%;
-        height: 100%;
-        margin:0;
-      }
 
-      .slideout-menu {
-          overflow-x: hidden;
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 0;
-        background: #F2F2F2;
-        width: 256px;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
-        display: none;
-      }
+<head>
+  <meta charset="utf-8">
+  <title>Slideout Demo</title>
+  <meta http-equiv="cleartype" content="on">
+  <meta name="MobileOptimized" content="320">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./resources/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
 
-      .slideout-panel {
-        background: maroon;
-        padding:15px;
-        margin: 0;
-        width: 100%;
-        position: fixed;
-        z-index: 1;
-        will-change: transform;
-      }
+    table, th, td {
+    border: .5px solid black;
+    padding: 20px;
+    }
 
-      .slideout-open,
-      .slideout-open body,
-      .slideout-open .slideout-panel {
-        overflow: hidden;
-      }
+    .slideout-menu {
+      overflow-x: hidden;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 0;
+      background: #F2F2F2;
+      width: 256px;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      display: none;
+    }
 
-      .slideout-open .slideout-menu {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
+    .slideout-panel {
+      background: maroon;
+      padding: 15px;
+      margin: 0;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      will-change: transform;
+    }
 
-    <nav id="menu">
-      <div class="logo">
+    .slideout-open,
+    .slideout-open body,
+    .slideout-open .slideout-panel {
+      overflow: hidden;
+    }
+
+    .slideout-open .slideout-menu {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav id="menu">
+    <div class="logo">
       <img src="./resources/images/logo3.png">
-      <h2>Welcome<i class="fa fa-star" aria-hidden="true"></i></h2>
+      <h2>Welcome
+        <script type="text/javascript">
+          document.write(localStorage.getItem('name'));
+        </script>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      </h2>
     </div>
     <div class="link_pan">
       <ul>
@@ -71,32 +83,102 @@
         <li><a href="#">Notes</a></li>
       </ul>
     </div>
-    </nav>
+  </nav>
 
-    <main id="panel">
-      <header>
-        <span class="toggle-button fix_line"><i class="fa fa-bars" aria-hidden="true"></i></span>
-        <h2 class="fix_line">Home</h2>
-      </header>
-    </main>
-    <section class="content" onload="slideout.enableTouch();">
-      <p>Test</p>
-    </section>
+  <main id="panel">
+    <header>
+      <span class="toggle-button fix_line"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      <h2 class="fix_line">Home</h2>
+    </header>
+  </main>
+  <section class="content" onload="slideout.enableTouch();">
+    <p><input type='text' name="name" id="saveName" placeholder="Enter Name..." />
 
-    <script src="dist/slideout.min.js"></script>
-    <script>
-      var slideout = new Slideout({
-        'panel': document.getElementById('panel'),
-        'menu': document.getElementById('menu'),
-        'padding': 256,
-        'tolerance': 70
-      });
+      <button onclick="save_data()" type="button">Save</button></p>
+      <table>
+    <tr>
+      <th><u>Name</u></th>
+      <th><u>Ext.</u></th>
+    </tr>
+    <tr>
+      <td>Carrie</td>
+      <td>1200</td>
+    </tr>
+    <tr>
+      <td>Sarah</td>
+      <td>1201</td>
+    </tr>
+    <tr>
+      <td>Stamp</td>
+      <td>1202</td>
+    </tr>
+    <tr>
+      <td>Chad</td>
+      <td>1203</td>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>1204</td>
+    </tr>
+    <tr>
+      <td>Mrs. Carson</td>
+      <td>1205</td>
+    </tr>
+    <tr>
+      <td>Shane</td>
+      <td>1206</td>
+    </tr>
+    <tr>
+      <td>A.J</td>
+      <td>1207</td>
+    </tr>
+    <tr>
+      <td>Johnny</td>
+      <td>1208</td>
+    </tr>
+    <tr>
+      <td>Barry</td>
+      <td>1209</td>
+    </tr>
+    <tr>
+      <td>Julie</td>
+      <td>1210</td>
+    </tr>
+    <tr>
+      <td>Wesley</td>
+      <td>1211</td>
+    </tr>
+    <tr>
+      <td>Butch</td>
+      <td>1212</td>
+    </tr>
+  </table>
+  </section>
 
-      // Toggle button
-      document.querySelector('.toggle-button').addEventListener('click', function() {
-        slideout.toggle();
-      });
-    </script>
+  <script src="dist/slideout.min.js"></script>
+  <script>
+    var slideout = new Slideout({
+      'panel': document.getElementById('panel'),
+      'menu': document.getElementById('menu'),
+      'padding': 256,
+      'tolerance': 70
+    });
 
-  </body>
+    // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function() {
+      slideout.toggle();
+    });
+  </script>
+
+  <script>
+    function save_data() {
+      var input = document.getElementById("saveName");
+      localStorage.setItem("name", input.value);
+      location.reload();
+    }
+  </script>
+
+
+</body>
+
 </html>
