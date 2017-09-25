@@ -161,7 +161,7 @@ input[type=submit] {
 
 .cols{
   border-radius: 50%;
-  width: 200px;
+  width: 150px;
   max-width: 150px !important;
   text-align: center;
   background: white;
@@ -175,4 +175,22 @@ input[type=submit] {
 
 .fa-archive{
     color: #D2691E !important;
+}
+
+.fabButton{
+  text-align: center;
+  border-radius: 50%;
+  background: blue;
+  color: white;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  bottom: 10px;
+  right: 9px;
+  position: fixed;
+  z-index: 1;
+}
+
+.fabButton i{
+  margin-top: 8px;
 }
