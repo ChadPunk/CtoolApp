@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Slideout Demo</title>
@@ -10,102 +11,101 @@
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="./resources/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-    <script src="./resources/js/index.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
-<body>
 
-    <nav id="menu">
-      <div class="logo">
-        <img src="./resources/images/logo3.png">
-        <h2>Welcome
+<body>
+  <nav id="menu">
+    <div class="logo">
+      <img src="./resources/images/logo3.png">
+      <h2>Welcome
           <script type="text/javascript">
             document.write(localStorage.getItem('name'));
           </script>
           <i class="fa fa-star" aria-hidden="true"></i>
         </h2>
-      </div>
-      <div class="link_pan">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Website</a></li>
-          <li><a href="#">Look Up</a></li>
-          <li><a href="notes.html">Notes</a></li>
-          <li><a href="settings.html">Settings</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <main id="panel">
-      <header>
-        <span class="toggle-button fix_line"><i class="fa fa-bars" aria-hidden="true"></i></span>
-        <h2 class="fix_line">Home</h2>
-      </header>
-  <section class="center"><center>
-    <div class="search">
-  <form action="javascript:void();" onsubmit="if(this.t1.value!='')parent.findString(this.t1.value);return(false);"><input type="text" id="t1" name="t1" size="20" placeholder="Search Here..."><input type="submit" name="b1" value="Clear"><input type="submit" onclick="clear()" name="b1" value="Find"></form>
-</div>
-      <table>
-    <tr>
-      <th><u>Name</u></th>
-      <th><u>Ext.</u></th>
-    </tr>
-    <tr>
-      <td>Carrie</td>
-      <td>1200</td>
-    </tr>
-    <tr>
-      <td>Sarah</td>
-      <td>1201</td>
-    </tr>
-    <tr>
-      <td>Stamp</td>
-      <td>1202</td>
-    </tr>
-    <tr>
-      <td>Chad</td>
-      <td>1203</td>
-    </tr>
-    <tr>
-      <td>John</td>
-      <td>1204</td>
-    </tr>
-    <tr>
-      <td>Mrs. Carson</td>
-      <td>1205</td>
-    </tr>
-    <tr>
-      <td>Shane</td>
-      <td>1206</td>
-    </tr>
-    <tr>
-      <td>A.J</td>
-      <td>1207</td>
-    </tr>
-    <tr>
-      <td>Johnny</td>
-      <td>1208</td>
-    </tr>
-    <tr>
-      <td>Barry</td>
-      <td>1209</td>
-    </tr>
-    <tr>
-      <td>Julie</td>
-      <td>1210</td>
-    </tr>
-    <tr>
-      <td>Wesley</td>
-      <td>1211</td>
-    </tr>
-    <tr>
-      <td>Butch</td>
-      <td>1212</td>
-    </tr>
-  </table>
-  </section>
+    </div>
+    <div class="link_pan">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Website</a></li>
+        <li><a href="#">Look Up</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main id="panel">
+    <header>
+      <span class="toggle-button fix_line"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      <h2 class="fix_line">Home</h2>
+    </header>
+    <section class="center">
+      <center>
+        <div class="search">
+          <form action="javascript:void();" onsubmit="if(this.t1.value!='')parent.findString(this.t1.value);return(false);"><input type="text" id="t1" name="t1" size="20" placeholder="Search Here..."><input type="submit" name="b1" value="Clear"><input type="submit" onclick="clear()" name="b1" value="Find"></form>
+        </div>
+        <table>
+          <tr>
+            <th><u>Name</u></th>
+            <th><u>Ext.</u></th>
+          </tr>
+          <tr>
+            <td>Carrie</td>
+            <td>1200</td>
+          </tr>
+          <tr>
+            <td>Sarah</td>
+            <td>1201</td>
+          </tr>
+          <tr>
+            <td>Stamp</td>
+            <td>1202</td>
+          </tr>
+          <tr>
+            <td>Chad</td>
+            <td>1203</td>
+          </tr>
+          <tr>
+            <td>John</td>
+            <td>1204</td>
+          </tr>
+          <tr>
+            <td>Mrs. Carson</td>
+            <td>1205</td>
+          </tr>
+          <tr>
+            <td>Shane</td>
+            <td>1206</td>
+          </tr>
+          <tr>
+            <td>A.J</td>
+            <td>1207</td>
+          </tr>
+          <tr>
+            <td>Johnny</td>
+            <td>1208</td>
+          </tr>
+          <tr>
+            <td>Barry</td>
+            <td>1209</td>
+          </tr>
+          <tr>
+            <td>Julie</td>
+            <td>1210</td>
+          </tr>
+          <tr>
+            <td>Wesley</td>
+            <td>1211</td>
+          </tr>
+          <tr>
+            <td>Butch</td>
+            <td>1212</td>
+          </tr>
+        </table>
+    </section>
   </main>
   <script src="./resources/js/slideout.js"></script>
   <script>
@@ -121,62 +121,60 @@
       slideout.toggle();
     });
   </script>
-<script>
-var TRange=null;
+  <script>
+    var TRange = null;
 
-function findString (str) {
- if (parseInt(navigator.appVersion)<4) return;
- var strFound;
- if (window.find) {
+    function findString(str) {
+      if (parseInt(navigator.appVersion) < 4) return;
+      var strFound;
+      if (window.find) {
 
-  // CODE FOR BROWSERS THAT SUPPORT window.find
+        // CODE FOR BROWSERS THAT SUPPORT window.find
 
-  strFound=self.find(str);
-  if (!strFound) {
-   strFound=self.find(str,0,1);
-   while (self.find(str,0,1)) continue;
-  }
- }
- else if (navigator.appName.indexOf("Microsoft")!=-1) {
+        strFound = self.find(str);
+        if (!strFound) {
+          strFound = self.find(str, 0, 1);
+          while (self.find(str, 0, 1)) continue;
+        }
+      } else if (navigator.appName.indexOf("Microsoft") != -1) {
 
-  // EXPLORER-SPECIFIC CODE
+        // EXPLORER-SPECIFIC CODE
 
-  if (TRange!=null) {
-   TRange.collapse(false);
-   strFound=TRange.findText(str);
-   if (strFound) TRange.select();
-  }
-  if (TRange==null || strFound==0) {
-   TRange=self.document.body.createTextRange();
-   strFound=TRange.findText(str);
-   if (strFound) TRange.select();
-  }
- }
- else if (navigator.appName=="Opera") {
-  alert ("Opera browsers not supported, sorry...")
-  return;
- }
- if (!strFound) alert ("String '"+str+"' not found!")
- return;
-}
-</script>
-
-<script>
-function clear() {
-
-}
-</script>
-<script>
-var a=document.getElementsByTagName("a");
-for(var i=0;i<a.length;i++) {
-  if(!a[i].onclick && a[i].getAttribute("target") != "_blank") {
-      a[i].onclick=function() {
-              window.location=this.getAttribute("href");
-              return false;
+        if (TRange != null) {
+          TRange.collapse(false);
+          strFound = TRange.findText(str);
+          if (strFound) TRange.select();
+        }
+        if (TRange == null || strFound == 0) {
+          TRange = self.document.body.createTextRange();
+          strFound = TRange.findText(str);
+          if (strFound) TRange.select();
+        }
+      } else if (navigator.appName == "Opera") {
+        alert("Opera browsers not supported, sorry...")
+        return;
       }
-  }
-}
-</script>
+      if (!strFound) alert("String '" + str + "' not found!")
+      return;
+    }
+  </script>
+
+  <script>
+    function clear() {
+
+    }
+  </script>
+  <script>
+    var a = document.getElementsByTagName("a");
+    for (var i = 0; i < a.length; i++) {
+      if (!a[i].onclick && a[i].getAttribute("target") != "_blank") {
+        a[i].onclick = function() {
+          window.location = this.getAttribute("href");
+          return false;
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>

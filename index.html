@@ -13,7 +13,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
-
   <nav id="menu">
     <div class="logo">
       <img src="./resources/images/logo3.png">
@@ -42,37 +41,37 @@
       <span class="toggle-button fix_line"><i class="fa fa-bars" aria-hidden="true"></i></span>
       <h2 class="fix_line">Home</h2>
     </header>
-  <section class="content">
-    <div class="card1">
-      <h1>Welcome</h1>
-      <p>This app is for Carson's employees only</p>
-    </div>
-    <br/>
-    <div class="fix">
-    <div class="cols">
-      <h1>Filled</h1>
-      <i class="fa fa-check fa-2x" aria-hidden="true"></i>
-      <P>150</P>
-    </div>
-    <div class="cols">
-      <h1>Orders</h1>
-      <i class="fa fa-archive fa-2x" aria-hidden="true"></i>
-      <P>150</P>
-    </div>
-    <div class="cols">
-      <h1>?</h1>
-      <P>150</P>
-    </div>
-    <div class="cols">
-      <h1>Date</h1>
-      <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
-      <P id="demo"></P>
-    </div>
-  </section>
+    <section class="content">
+      <div class="card1">
+        <h1>Welcome</h1>
+        <p>This app is for Carson's employees only</p>
+      </div>
+      <br/>
+      <div class="fix">
+        <div class="cols">
+          <h1>Filled</h1>
+          <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+          <P>150</P>
+        </div>
+        <div class="cols">
+          <h1>Orders</h1>
+          <i class="fa fa-archive fa-2x" aria-hidden="true"></i>
+          <P>150</P>
+        </div>
+        <div class="cols">
+          <h1>?</h1>
+          <P>150</P>
+        </div>
+        <div class="cols">
+          <h1>Date</h1>
+          <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+          <P id="demo"></P>
+        </div>
+    </section>
 
-  <footer class="fabButton" onclick="location.reload();">
-    <i class="fa fa-refresh fa-2x" aria-hidden="true"></i>
-  </footer>
+    <footer class="fabButton" onclick="location.reload();">
+      <i class="fa fa-refresh fa-2x" aria-hidden="true"></i>
+    </footer>
   </main>
   <script src="./resources/js/slideout.js"></script>
   <script>
@@ -89,20 +88,20 @@
     });
   </script>
 
-<script>
-document.getElementById("demo").innerHTML = moment().format("M-D");
-</script>
-<script>
-var a=document.getElementsByTagName("a");
-for(var i=0;i<a.length;i++) {
-  if(!a[i].onclick && a[i].getAttribute("target") != "_blank") {
-      a[i].onclick=function() {
-              window.location=this.getAttribute("href");
-              return false;
+  <script>
+    document.getElementById("demo").innerHTML = moment().format("M-D");
+  </script>
+  <script>
+    var a = document.getElementsByTagName("a");
+    for (var i = 0; i < a.length; i++) {
+      if (!a[i].onclick && a[i].getAttribute("target") != "_blank") {
+        a[i].onclick = function() {
+          window.location = this.getAttribute("href");
+          return false;
+        }
       }
-  }
-}
-</script>
+    }
+  </script>
 </body>
 
 </html>
