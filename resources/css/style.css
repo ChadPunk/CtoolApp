@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
-
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +6,40 @@ body {
   background: #F9F9F9 !important;
 }
 
-header{
+table, th, td {
+  border: .5px solid black;
+  padding: 20px;
+}
+
+.slideout-menu {
+  overflow-x: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  background: #F2F2F2;
+  width: 256px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-panel {
+  z-index: 1;
+  will-change: transform;
+}
+
+.slideout-open, .slideout-open body, .slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+header {
   background: maroon;
   padding: 15px;
   margin: 0;
@@ -111,7 +143,7 @@ li a, li a:hover {
 }
 
 .search {
-padding: 15px;
+  padding: 15px;
 }
 
 input[type=text] {
@@ -133,7 +165,7 @@ input[type=submit] {
   padding: 15px;
 }
 
-.card1{
+.card1 {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   background: #fff;
@@ -142,35 +174,35 @@ input[type=submit] {
   margin: 0 auto;
   padding: 25px;
   border-radius: 15px;
-  -webkit-box-shadow: -1px 0px 36px 29px rgba(241,242,244,1);
-  -moz-box-shadow: -1px 0px 36px 29px rgba(241,242,244,1);
-  box-shadow: -1px 0px 36px 29px rgba(241,242,244,1);
+  -webkit-box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
+  -moz-box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
+  box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
 }
 
-.card1 h1{
+.card1 h1 {
   color: red;
 }
 
-.order_status{
+.order_status {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   background: #fff;
-  width:80px;
+  width: 80px;
   margin: 0 auto;
   padding: 25px;
   border-radius: 15px;
 }
 
-.order_status h1{
+.order_status h1 {
   color: red;
 }
 
-.fix{
+.fix {
   display: flex;
   flex-flow: wrap;
 }
 
-.cols{
+.cols {
   border-radius: 50%;
   width: 130px;
   height: 130px;
@@ -179,24 +211,28 @@ input[type=submit] {
   background: white;
   margin: 5px auto;
   padding: 20px;
-  -webkit-box-shadow: -1px 0px 36px 4px rgba(241,242,244,1);
-  -moz-box-shadow: -1px 0px 36px 4px rgba(241,242,244,1);
-  box-shadow: -1px 0px 36px 4px rgba(241,242,244,1);
+  -webkit-box-shadow: -1px 0px 36px 4px rgba(241, 242, 244, 1);
+  -moz-box-shadow: -1px 0px 36px 4px rgba(241, 242, 244, 1);
+  box-shadow: -1px 0px 36px 4px rgba(241, 242, 244, 1);
 }
 
-.fa-check{
+.fa-check {
   color: green !important;
 }
 
-.fa-archive{
-    color: #D2691E !important;
+.fa-archive {
+  color: #D2691E !important;
 }
 
-.fa-calendar{
+.fa-calendar {
   color: #f57a7a !important;
 }
 
-.fabButton{
+.fa-exclamation-triangle {
+  color: orange;
+}
+
+.fabButton {
   text-align: center;
   border-radius: 50%;
   background: blue;
@@ -210,6 +246,62 @@ input[type=submit] {
   z-index: 1;
 }
 
-.fabButton i{
+.fabButton i {
   margin-top: 8px;
+}
+
+#settings_clear {
+  max-width: 500px;
+  z-index: 3;
+  width: 80vw;
+  background: #FFF;
+  padding: 25px;
+  position: relative;
+  margin: 0 auto;
+  display: none;
+  border-radius: 15px;
+}
+
+.setting_p {
+  text-align: justify;
+  padding: 25px;
+}
+
+#black_out {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.close_button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.sureYnot {
+  border-radius: 25px;
+  background: #f2f2f2;
+  border: none;
+  padding: 10px;
+  width: 80px;
+  outline: none;
+  margin: 5px;
+}
+
+.ummNah {
+  border-radius: 25px;
+  background: #f2f2f2;
+  border: none;
+  padding: 10px;
+  width: 80px;
+  outline: none;
+    margin: 5px;
 }

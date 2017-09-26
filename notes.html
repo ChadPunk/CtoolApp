@@ -10,156 +10,316 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="./resources/css/style.css">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.3/normalize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
-    body {
+
+  .container {
+  margin: 2%;
+}
+
+  .buttons,
+  #edit-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+
+  /* ---------- General Button CSS ---------- */
+
+  .btn {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    outline: 0;
+    background-color: #106cc8;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .highlight {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    will-change: opacity, transform;
+  }
+
+  .highlight:active {
+    background: #baf2ec;
+  }
+
+  .red {
+    background-color: #ff5722;
+  }
+
+
+  /* Material Icons within Button Nav */
+
+  .buttons .material-icons {
+    padding-right: 0.7rem;
+  }
+
+  #new-sticky {
+    margin-right: 0.5rem;
+  }
+
+  #new-sticky,
+  #empty {
+    margin-bottom: 0.7rem;
+  }
+
+
+  /* ----------  Stickys  ------------- */
+
+
+  /* Stickys */
+
+  .card-panel {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    color: white;
+    border-radius: 0.2rem;
+    background-color: #009688;
+    box-shadow: 2px 2px 12px -2px rgba(0, 0, 0, 0.5);
+  }
+
+  [contenteditable="true"]:active,
+  [contenteditable="true"]:focus {
+    border: none;
+    outline: none;
+  }
+
+
+  /* Erase Button in Stickys */
+
+  .erase {
+    right: -0.8rem;
+    bottom: 0.5rem;
+    float: right;
+    margin-top: 0.5rem;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+  }
+
+
+  /* ---------- Media Queries ---------- */
+
+
+  /* Width of iPhone 6: 375 px*/
+
+  @media screen and (max-width: 375px) {
+    #new-sticky,
+    #empty {
       width: 100%;
-      height: 100%;
-      margin: 0;
     }
-
-    table,
-    th,
-    td {
-      border: .5px solid black;
-      padding: 20px;
+    #new-sticky {
+      margin-right: 0;
     }
-
-    .slideout-menu {
-      overflow-x: hidden;
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      z-index: 0;
-      background: #F2F2F2;
-      width: 256px;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-      display: none;
-    }
-
-    .slideout-panel {
-      background: maroon;
-      padding: 15px;
-      margin: 0;
-      width: 100%;
-      position: fixed;
-      z-index: 1;
-      will-change: transform;
-    }
-
-    .slideout-open,
-    .slideout-open body,
-    .slideout-open .slideout-panel {
-      overflow: hidden;
-    }
-
-    .slideout-open .slideout-menu {
-      display: block;
-    }
+  }
 
 
-    main {
-      color: #333;
-      display: block;
-      height: calc(100% - 6.3em);
-      font-size: 1.5em;
-      padding: 1.5em;
-      font-family: Helvetica;
-      overflow: scroll;
-      outline: none;
-    }
+  /* Width of iPhone 6 Plus: 375 px*/
 
-    button {
-      height: 5em;
-      width: 100%;
-      font-size: 1em;
-      background: #e67e22;
-      box-sizing: border-box;
-      border: 0.7em solid rgba(20, 20, 20, 0.3);
-      color: #f5f5f5;
-      font-weight: bold;
-      outline: none;
-      -webkit-touch-callout: none;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @media screen and (min-width: 376px) and (max-width: 415px) {
+    #new-sticky,
+    #empty {
+      min-width: 48%;
     }
+  }
 
-    button:hover {
-      background: #c86c1d;
-      cursor: pointer;
-    }
 
-    button:active {
-      background: #ab5c18;
+  /* Anything larger than iPhone 6 Plus */
+
+  @media screen and (min-width: 415px) {
+    .card-panel {
+      margin-right: 1rem;
     }
+  }
+
+
+  /*Anything bigger than an Apple iPad/iPad Mini */
+
+  @media screen and (min-width: 768px) {
+    .card-panel {
+      max-width: 18rem;
+    }
+  }
   </style>
 </head>
 
 <body>
+ <div class="container">
+  <div class="buttons">
+    <button id="new-sticky" class="highlight btn"><i class="material-icons">note_add</i>Create</button>
+    <button id="empty" class="highlight btn red"><i class="material-icons">close</i>Delete All</button>
+  </div>
 
-  <main contenteditable="" autocorrect="off"></main>
-  <button>Save</button>
+  <article id="edit-container">
+  </article>
+</div>
 
-
-  <script src="dist/slideout.min.js"></script>
   <script>
-    var slideout = new Slideout({
-      'panel': document.getElementById('panel'),
-      'menu': document.getElementById('menu'),
-      'padding': 256,
-      'tolerance': 70
-    });
+  (function() {
+  'use strict';
 
-    // Toggle button
-    document.querySelector('.toggle-button').addEventListener('click', function() {
-      slideout.toggle();
-    });
-  </script>
-  <script>
-    var button = document.querySelector('button');
-    var main = document.querySelector('main');
+  // **Element Selectors**
 
-    if (localStorage['note'] === undefined) {
-      localStorage['note'] = 'Save your note by typing in here and clicking the Save Button.<br>You can also press CMD'
-    }
+  var container = document.getElementById('edit-container');
+  var deleteAllButton = document.getElementById('empty');
+  var newStickyButton = document.getElementById('new-sticky');
 
-    function siteLoad() {
-      main.innerHTML = localStorage['note'];
-    }
+  // **Getter & Setter Methods to `localStorage` **
 
-    function buttonSave() {
-      localStorage['note'] = main.innerHTML;
-    }
+  function getLS(id) {
+    return window.localStorage[id];
+  }
 
-    function keySave(e) {
-      if (e.keyCode === 83 && e.metaKey || e.keyCode === 83 && e.ctrlKey) {
-        e.preventDefault();
-        localStorage['note'] = main.innerHTML;
+  function setLS(id, val) {
+    window.localStorage[id] = val;
+  }
+
+  // ## CRUD Methods for Stickys
+
+  // ** Create a Sticky **
+
+  // Create a sticky with the appropriate ID, using `localStorage`'s counter
+  function addNewSticky() {
+    setLS('counter', parseInt(getLS('counter')) + 1);
+    return createSticky('Edit Me and Refresh!', getLS('counter'));
+  }
+
+  // Append Sticky to the container.
+  function createSticky(text, id) {
+    var sticky = document.createElement('section');
+    sticky.id = id;
+    sticky.className = "card-panel";
+
+    var edit = document.createElement('span');
+    edit.id = id;
+    edit.contentEditable = "true";
+    edit.className = "editable";
+    edit.innerHTML = text;
+
+    // Each sticky has a contenteditable span within a section and a delete button.
+    sticky.appendChild(edit);
+    sticky.appendChild(renderDeleteButton());
+    container.appendChild(sticky);
+    setLS(id, text);
+  }
+
+  // ** Repaint Stickys **
+
+  // On refresh, re-create and re-paint Stickys, using text and ID data from `localStorage`.
+  function repaintStickys() {
+    var keys = Object.keys(window.localStorage).map(function(val) {
+      //  Populate a sticky from `localStorage` as long as it isn't the `counter` or `alreadyVisited` property.
+      if (val === "counter") {
+        return val;
+      } else if (val === "alreadyVisited") {
+        return val;
+      } else {
+        return parseInt(val);
       }
+      // This is so the stickys are always in the same order (by date of creation).
+    }).sort(function(a, b) {
+      return a > b;
+    });
+    // Repaint Stickys.
+    keys.forEach(function(key) {
+      if (key !== "counter" && key !== "alreadyVisited") {
+        createSticky(getLS(key), key);
+      }
+    });
+  }
+
+  // ** Update Stickys **
+
+  // Continuously store every inputted keystroke/character into `localStorage`.
+  function editStickys(e) {
+    var elemID = e.srcElement.id;
+
+    if (!getLS(elemID)) {
+      setLS(elemID, '');
     }
+    setLS(elemID, e.srcElement.innerHTML);
+    console.log('window.localStorage =', window.localStorage);
+  }
 
-    if (window.addEventListener) {
+  // ** Delete Stickys **
 
-      window.addEventListener('load', siteLoad, false);
-      button.addEventListener('click', buttonSave, false);
-      main.addEventListener('keydown', keySave, false);
+  // Create delete button for each Sticky.
+  function renderDeleteButton() {
+    var button = document.createElement('button');
+    button.className = "erase material-icons highlight";
+    button.innerHTML = "close";
+    button.addEventListener('click', function(e) {
+      var id = e.srcElement.parentElement.id;
+      e.srcElement.parentElement.style.display = "none";
+      delete window.localStorage[id];
+    });
+    return button;
+  }
 
-    } else if (window.attachEvent) {
-
-      window.attachEvent('onload', siteLoad);
-      button.attachEvent('onclick', buttonSave);
-      main.attachEvent('keydown', keySave);
-
-    } else {
-
-      window.onload = siteLoad;
-      button.onclick = buttonSave;
-      main.onkeydown = keySave;
-
+  // Delete all Stickys from the page
+  function emptyLocalStorage() {
+    for (var prop in window.localStorage) {
+      delete window.localStorage[prop];
+      setLS('counter', 1);
+      setLS('alreadyVisited', true);
     }
+    container.innerHTML = '';
+  }
+
+  // **Event Listeners**
+
+  // By using 'input' as the event, we can capture not just keypress, but backspace and other key events within the contenteditable span.
+  container.addEventListener('input', editStickys);
+  deleteAllButton.addEventListener('click', emptyLocalStorage);
+  newStickyButton.addEventListener('click', addNewSticky);
+
+  // ## Initialize Todolist
+
+  window.localStorage.counter = window.localStorage.counter || 1;
+
+  if (!getLS('alreadyVisited')) {
+    createSticky("Features of Stickys<ul>" +
+      "<li>Here you can add notes.</li>" +
+      "<li>Please be aware if cache gets cleared it will remove all of these notes.</li>" +
+      "<li>Any important information should be stored elseware in case of an error.</li></ul>", 1);
+    window.localStorage.alreadyVisited = true;
+  } else {
+    repaintStickys();
+  }
+}());
   </script>
 
 

@@ -11,48 +11,6 @@
   <link rel="stylesheet" href="./resources/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <style>
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
-    table, th, td {
-    border: .5px solid black;
-    padding: 20px;
-    }
-    .slideout-menu {
-      overflow-x: hidden;
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      z-index: 0;
-      background: #F2F2F2;
-      width: 256px;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-      display: none;
-    }
-    .slideout-panel {
-      background: maroon;
-      padding: 15px;
-      margin: 0;
-      width: 100%;
-      position: fixed;
-      z-index: 1;
-      will-change: transform;
-    }
-    .slideout-open,
-    .slideout-open body,
-    .slideout-open .slideout-panel {
-      overflow: hidden;
-    }
-    .slideout-open .slideout-menu {
-      display: block;
-    }
-  </style>
 </head>
 <body>
 
@@ -148,7 +106,7 @@
   </table>
   </section>
 
-  <script src="./resources/js/slideout.min.js"></script>
+  <script src="./resources/js/slideout.js"></script>
   <script>
     var slideout = new Slideout({
       'panel': document.getElementById('panel'),
