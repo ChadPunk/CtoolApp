@@ -102,6 +102,13 @@
       }
     }
   </script>
+
+  <script>
+if (localStorage.getItem("name") === null) {
+    localStorage.setItem("name", "Guest");
+    location.reload();
+  }
+  </script>
 </body>
 
 </html>

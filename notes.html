@@ -58,8 +58,8 @@
     }
 
     .highlight {
+      border-radius: 25px;
       position: relative;
-      z-index: 1;
       overflow: hidden;
       cursor: pointer;
       transition: all 0.5s ease-out;
@@ -96,12 +96,15 @@
     /* ----------  Stickys  ------------- */
 
     /* Stickys */
-
+.card-panel ul li{
+  background: white;
+  color: black;
+}
     .card-panel {
       position: relative;
       width: 100%;
-      padding: 1rem;
-      padding-bottom: 0;
+      padding: 2rem;
+      padding-bottom: 5px;
       margin-bottom: 1rem;
       color: white;
       border-radius: 0.2rem;
@@ -120,8 +123,9 @@
 
     .erase {
       right: -0.8rem;
-      bottom: 0.5rem;
-      float: right;
+      top: 0px;
+      right: 5px;
+      position: absolute;
       margin-top: 0.5rem;
       border: 0;
       border-radius: 50%;
@@ -240,7 +244,7 @@
       // Create a sticky with the appropriate ID, using `localStorage`'s counter
       function addNewSticky() {
         setLS('counter', parseInt(getLS('counter')) + 1);
-        return createSticky('Edit Me and Refresh!', getLS('counter'));
+        return createSticky('Tap me to start editing!', getLS('counter'));
       }
 
       // Append Sticky to the container.
@@ -315,6 +319,7 @@
         return button;
       }
 
+
       // Delete all Stickys from the page
       function emptyLocalStorage() {
         for (var prop in window.localStorage) {
@@ -337,7 +342,7 @@
       window.localStorage.counter = window.localStorage.counter || 1;
 
       if (!getLS('alreadyVisited')) {
-        createSticky("Features of Stickys<ul>" +
+        createSticky("How to Use Notes<ul>" +
           "<li>Here you can add notes.</li>" +
           "<li>Please be aware if cache gets cleared it will remove all of these notes.</li>" +
           "<li>Any important information should be stored elseware in case of an error.</li></ul>", 1);

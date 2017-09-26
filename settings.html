@@ -17,7 +17,15 @@
 <body>
   <nav id="menu">
     <div class="logo">
-      <img src="./resources/images/logo3.png">
+
+      <!---Bug--->
+      <script>
+      localStorage.setItem("icon", "resources/images/logo3.png");
+      document.getElementById("image").src = localStorage.getItem('icon');
+      </script>
+      <!---Bug--->
+
+      <img id="image" src="./resources/images/logo3.png">
       <h2>Welcome
           <script type="text/javascript">
             document.write(localStorage.getItem('name'));
@@ -25,6 +33,7 @@
           <i class="fa fa-star" aria-hidden="true"></i>
         </h2>
     </div>
+
     <div class="link_pan">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -44,7 +53,8 @@
       <h2 class="fix_line">Home</h2>
     </header>
     <section class="content">
-      V 0.0.16 (Alpha)
+
+<!---Clear Data Div Box--->
       <div id="black_out" onclick="closeDiv()"></div>
       <div id="settings_clear">
         <div class="close_button" onclick="closeDiv()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
@@ -55,9 +65,16 @@
           <button class="sureYnot" onclick="clearData()"><i class="material-icons">Yes</button>
           <button class="ummNah" onclick="closeDiv()"><i class="material-icons">Cancel</button></center>
       </div>
+<!---Clear Data Box End--->
+
+      <!---Start Settings Page--->
+      v 0.0.17
       <p><input type='text' name="name" id="saveName" placeholder="Enter Name..." />
         <button onclick="save_data()" type="button">Save</button></p>
       <p>Clear Saved Data<button onclick="AskToClear()" type="button">Save</button></p>
+      <p>User Settings</p>
+      <!---End Settings Page--->
+
     </section>
   </main>
   <script src="./resources/js/slideout.js"></script>
@@ -98,6 +115,7 @@
       alert("Data Cleared")
       document.getElementById('settings_clear').style.display = 'none';
       document.getElementById('black_out').style.display = 'none';
+      localStorage.setItem("name", "Guest");
       location.reload();
     }
   </script>

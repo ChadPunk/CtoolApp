@@ -148,7 +148,7 @@ li a, li a:hover {
 
 input[type=text] {
   text-align: center;
-  width: 20vw;
+  width: 200px;
   border-radius: 50px;
   border: none;
   outline: none;
