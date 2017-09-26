@@ -10,37 +10,39 @@
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="./resources/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+    <script src="./resources/js/index.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
 
-  <nav id="menu">
-    <div class="logo">
-      <img src="./resources/images/logo3.png">
-      <h2>Welcome
-        <script type="text/javascript">
-          document.write(localStorage.getItem('name'));
-        </script>
-        <i class="fa fa-star" aria-hidden="true"></i>
-      </h2>
-    </div>
-    <div class="link_pan">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Directory</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Website</a></li>
-        <li><a href="#">Look Up</a></li>
-        <li><a href="#">Notes</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav id="menu">
+      <div class="logo">
+        <img src="./resources/images/logo3.png">
+        <h2>Welcome
+          <script type="text/javascript">
+            document.write(localStorage.getItem('name'));
+          </script>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </h2>
+      </div>
+      <div class="link_pan">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Website</a></li>
+          <li><a href="#">Look Up</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <main id="panel">
-    <header>
-      <span class="toggle-button fix_line"><i class="fa fa-bars" aria-hidden="true"></i></span>
-      <h2 class="fix_line">Home</h2>
-    </header>
+    <main id="panel">
+      <header>
+        <span class="toggle-button fix_line"><i class="fa fa-bars" aria-hidden="true"></i></span>
+        <h2 class="fix_line">Home</h2>
+      </header>
   </main>
   <section class="center"><center>
     <div class="search">
