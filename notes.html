@@ -13,167 +13,143 @@
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.3/normalize.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
     .container {
       margin: 2%;
     }
-
-    .buttons,
-    #edit-container {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: -moz-box;
-      display: flex;
-      -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+    #appContainer {
+    	width: 50%;
+    	max-width: 600px;
+    	min-width: 160px;
+    	position: relative;
+    	margin: 2px auto;
+    	font: 14px/1em Helvetica,Arial,sans-serif;
+    	padding: 0;
+    	background:#fff url("../images/bg.jpg") no-repeat 100% -26px;
     }
-
-
-    /* ---------- General Button CSS ---------- */
-
-    .btn {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: -moz-box;
-      display: flex;
-      padding: 0.5rem 1.5rem;
-      text-transform: uppercase;
-      color: white;
-      border: none;
-      border-radius: 2px;
-      outline: 0;
-      background-color: #106cc8;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-      -webkit-align-items: center;
-      align-items: center;
-      -webkit-box-align: center;
-      -moz-box-align: center;
-      -webkit-box-pack: center;
-      -moz-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
+    .notesForm {
+    	margin: 10px 10px 10px 10px;
     }
-
-    .highlight {
-      border-radius: 25px;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 0.5s ease-out;
-      -webkit-tap-highlight-color: transparent;
-      tap-highlight-color: transparent;
-      will-change: opacity, transform;
+    .noteslist ul{
+    	padding: 0;
+    	margin: 0;
     }
-
-    .highlight:active {
-      background: #baf2ec;
+    .noteslist li {
+    	list-style: none;
+    	padding: 5px 0;
+    	margin: 0;
+    	width: 100%;
     }
-
-    .red {
-      background-color: #ff5722;
+    .noteslist .icon{
+    	text-align: right;
+        display: inline-block;
+        vertical-align: top;
+        position: absolute;
+        top: 10px;
+        right: 8px;
     }
-
-
-    /* Material Icons within Button Nav */
-
-    .buttons .material-icons {
-      padding-right: 0.7rem;
+    .noteslist .icon i{
+    	font-size: 20px;
+    	padding: 0 3px;
     }
-
-    #new-sticky {
-      margin-right: 0.5rem;
+    .noteslist .icon i:hover{
+    	color: #0077bb;
     }
-
-    #new-sticky,
-    #empty {
-      margin-bottom: 0.7rem;
+    .each-note {
+    	border: 1px solid #ccc;
+    	padding: 10px 6px;
+    	width: auto;
+    	position: relative;
     }
-
-
-    /* ----------  Stickys  ------------- */
-
-    /* Stickys */
-.card-panel ul li{
-  background: white;
-  color: black;
-}
-    .card-panel {
-      position: relative;
-      width: 100%;
-      padding: 2rem;
-      padding-bottom: 5px;
-      margin-bottom: 1rem;
-      color: white;
-      border-radius: 0.2rem;
-      background-color: #009688;
-      box-shadow: 2px 2px 12px -2px rgba(0, 0, 0, 0.5);
+    .each-note:hover {
+    	background: #eee;
     }
-
-    [contenteditable="true"]:active,
-    [contenteditable="true"]:focus {
-      border: none;
-      outline: none;
+    .each-note label{
+    	width:76%;
+    	display: inline-block;
     }
-
-
-    /* Erase Button in Stickys */
-
-    .erase {
-      right: -0.8rem;
-      top: 0px;
-      right: 5px;
-      position: absolute;
-      margin-top: 0.5rem;
-      border: 0;
-      border-radius: 50%;
-      background: transparent;
+    .each-note .note-check {
+    	display: inline-block;
+    	width: 15px;
     }
-
-
-    /* ---------- Media Queries ---------- */
-
-    /* Width of iPhone 6: 375 px*/
-
-    @media screen and (max-width: 375px) {
-      #new-sticky,
-      #empty {
+    .each-note .note-text {
+    	display: inline-block;
+        width: 87% !important;
+        vertical-align: top;
+        word-break: break-word;
+    }
+    .each-note .hidenEdit{
+    	position: absolute;
+        text-align: right;
+        right: 10px;
+        top: 18px;
+    }
+    .selected-note {
+    	/*text-decoration: line-through;*/
+    }
+    input, button {
+    	vertical-align:middle;
+    	font-size: 15px;
+    	box-sizing:border-box;
+    	border-radius: 6px;
+    }
+    .notesForm input[type="text"] {
+       	border: 1px solid #ccc;
+        line-height: 2.5;
+        padding: 0;
+        text-indent: 10px;
         width: 100%;
-      }
-      #new-sticky {
-        margin-right: 0;
-      }
+    }
+    .notesForm input[type="text"].ng-invalid {
+    	border: 1px solid #ff0000;
+    }
+    .app-button, .form-button {
+    	background: #0077bb;
+    	border: none;
+        line-height: 2.5;
+        padding: 0 30px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.4s ease-in 0s;
+        width:100%;
+        margin: 10px 0;
+    }
+    .app-button {
+    	background: #ccc;
+    	color: #fff;
+    	width: 48%;
+        margin-left: 5px;
+    }
+    .form-button:hover {
+    	background: #0077ff;
+    }
+    .app-button:hover {
+    	background: #aaa;
+    }
+    /* css for mobile device */
+    @media only screen and (max-width : 636px) {
+    	#appContainer {
+    		width: 100%;
+    		margin: 2px -10px;
+    	}
+    	.each-note .note-text {
+    	    width: 87% !important;
+    	}
+    	.app-button {
+    		width: 100%;
+    	    margin-left: 0;
+    	}
+    }
+    /* css for tablet device */
+    @media only screen  and (max-width : 1024px) {
+    	#appContainer {
+    		width: 100%;
+    	}
     }
 
-
-    /* Width of iPhone 6 Plus: 375 px*/
-
-    @media screen and (min-width: 376px) and (max-width: 415px) {
-      #new-sticky,
-      #empty {
-        min-width: 48%;
-      }
-    }
-
-
-    /* Anything larger than iPhone 6 Plus */
-
-    @media screen and (min-width: 415px) {
-      .card-panel {
-        margin-right: 1rem;
-      }
-    }
-
-
-    /*Anything bigger than an Apple iPad/iPad Mini */
-
-    @media screen and (min-width: 768px) {
-      .card-panel {
-        max-width: 18rem;
-      }
-    }
   </style>
 </head>
 
@@ -207,150 +183,86 @@
       <h2 class="fix_line">Home</h2>
     </header>
     <section class="content">
-      <div class="container">
-        <div class="buttons">
-          <button id="new-sticky" class="highlight btn"><i class="material-icons">note_add</i>Create</button>
-          <button id="empty" class="highlight btn red"><i class="material-icons">close</i>Delete All</button>
-        </div>
 
-        <article id="edit-container">
-        </article>
-      </div>
+  	<div class="container" ng-app="notesApp">
+    	<div ng-controller="notesController" id="appContainer">
+    		<h3>Notes:</h3>
+   		<div class="notesForm">
+   			<form name="notesForm" ng-submit="addNote()">
+          <textarea name="paragraph_text" name="newnote" ng-model="newNote" placeholder="Enter your notes here ..." cols="50" rows="10" required /></textarea>
+   				<button type="submit" class="form-button" ng-disabled="notesForm.$invalid">Add Note</button>
+   			</form>
+
+  	 		<div class="noteslist">
+  	 				<span>You have {{notes.length}} Notes</span>
+  	 				<ul>
+  	 					<li ng-repeat="note in notes">
+  	 						<div class="each-note note-$index">
+  	 							<div ng-show="!editing">
+  	 								<label><input type="checkbox" ng-model="note.selected" class="note-check"/>
+  	 								<div ng-class="{'selected-note':note.selected}" class="note-text">{{note.text}}</div></label>
+  	 							</div>
+             						<div ng-show="editing">
+                          <textarea name="paragraph_text" ng-model="editNote" class="note-text" cols="50" rows="10" required /></textarea>
+             							<i class="material-icons hidenEdit" ng-click="note.text = editNote; editing = false;">edit</i>
+             						</div>
+
+  								<span ng-hide="editing" class="icon" >
+  									<i class="material-icons" ng-click="editNote = note.text; editing = true;">edit</i>
+  									<i class="material-icons" ng-click="removeNote($index)">delete</i>
+  								</span>
+  	 						</div>
+  	 					</li>
+  	 				</ul>
+  	 				<button class="app-button" ng-click="removeSelectedNote()">Remove Selected</button>
+  	 				<button class="app-button" ng-click="saveNotes()">Save Notes</button>
+  	 		</div>
+  		</div>
+  	</div>
+  </div>
+
   </main>
   <script>
-    (function() {
-      'use strict';
+  // Angular js app and controller for Notes
+angular.module('notesApp',[]).
+controller('notesController', function($scope){
 
-      // **Element Selectors**
+// retrieving our data and converting it back into an array if it exist
+var data = localStorage.getItem("notesAppData");
+if (data !== null){
+  $scope.notes = JSON.parse(data);
+} else {
+  $scope.notes = [];
+}
 
-      var container = document.getElementById('edit-container');
-      var deleteAllButton = document.getElementById('empty');
-      var newStickyButton = document.getElementById('new-sticky');
+//function to add notes
+$scope.addNote = function(){
+  $scope.notes.push({'text':$scope.newNote,'selected':false});
+  $scope.newNote = "";
+};
+//function to remove a note
+$scope.removeNote = function(index){
+  console.log(index);
+  $scope.notes.splice(index, 1);
+};
+//function to remove selected notes
+$scope.removeSelectedNote = function(){
+  $scope.notes = $scope.notes.filter(function(arr){
+    return !arr.selected;
+  });
+};
 
-      // **Getter & Setter Methods to `localStorage` **
+// storing our data/array as a string in browser storage
+$scope.saveNotes = function(){
+  //check if browser support localstorage
+  if (typeof(Storage) !== "undefined") {
+     localStorage.setItem("notesAppData", angular.toJson($scope.notes));
+  } else {
+     alert("Sorry! No Web Storage support..");
+  }
+};
 
-      function getLS(id) {
-        return window.localStorage[id];
-      }
-
-      function setLS(id, val) {
-        window.localStorage[id] = val;
-      }
-
-      // ## CRUD Methods for Stickys
-
-      // ** Create a Sticky **
-
-      // Create a sticky with the appropriate ID, using `localStorage`'s counter
-      function addNewSticky() {
-        setLS('counter', parseInt(getLS('counter')) + 1);
-        return createSticky('Tap me to start editing!', getLS('counter'));
-      }
-
-      // Append Sticky to the container.
-      function createSticky(text, id) {
-        var sticky = document.createElement('section');
-        sticky.id = id;
-        sticky.className = "card-panel";
-
-        var edit = document.createElement('span');
-        edit.id = id;
-        edit.contentEditable = "true";
-        edit.className = "editable";
-        edit.innerHTML = text;
-
-        // Each sticky has a contenteditable span within a section and a delete button.
-        sticky.appendChild(edit);
-        sticky.appendChild(renderDeleteButton());
-        container.appendChild(sticky);
-        setLS(id, text);
-      }
-
-      // ** Repaint Stickys **
-
-      // On refresh, re-create and re-paint Stickys, using text and ID data from `localStorage`.
-      function repaintStickys() {
-        var keys = Object.keys(window.localStorage).map(function(val) {
-          //  Populate a sticky from `localStorage` as long as it isn't the `counter` or `alreadyVisited` property.
-          if (val === "counter") {
-            return val;
-          } else if (val === "alreadyVisited") {
-            return val;
-          } else {
-            return parseInt(val);
-          }
-          // This is so the stickys are always in the same order (by date of creation).
-        }).sort(function(a, b) {
-          return a > b;
-        });
-        // Repaint Stickys.
-        keys.forEach(function(key) {
-          if (key !== "counter" && key !== "alreadyVisited") {
-            createSticky(getLS(key), key);
-          }
-        });
-      }
-
-      // ** Update Stickys **
-
-      // Continuously store every inputted keystroke/character into `localStorage`.
-      function editStickys(e) {
-        var elemID = e.srcElement.id;
-
-        if (!getLS(elemID)) {
-          setLS(elemID, '');
-        }
-        setLS(elemID, e.srcElement.innerHTML);
-        console.log('window.localStorage =', window.localStorage);
-      }
-
-      // ** Delete Stickys **
-
-      // Create delete button for each Sticky.
-      function renderDeleteButton() {
-        var button = document.createElement('button');
-        button.className = "erase material-icons highlight";
-        button.innerHTML = "close";
-        button.addEventListener('click', function(e) {
-          var id = e.srcElement.parentElement.id;
-          e.srcElement.parentElement.style.display = "none";
-          delete window.localStorage[id];
-        });
-        return button;
-      }
-
-
-      // Delete all Stickys from the page
-      function emptyLocalStorage() {
-        for (var prop in window.localStorage) {
-          delete window.localStorage[prop];
-          setLS('counter', 1);
-          setLS('alreadyVisited', true);
-        }
-        container.innerHTML = '';
-      }
-
-      // **Event Listeners**
-
-      // By using 'input' as the event, we can capture not just keypress, but backspace and other key events within the contenteditable span.
-      container.addEventListener('input', editStickys);
-      deleteAllButton.addEventListener('click', emptyLocalStorage);
-      newStickyButton.addEventListener('click', addNewSticky);
-
-      // ## Initialize Todolist
-
-      window.localStorage.counter = window.localStorage.counter || 1;
-
-      if (!getLS('alreadyVisited')) {
-        createSticky("How to Use Notes<ul>" +
-          "<li>Here you can add notes.</li>" +
-          "<li>Please be aware if cache gets cleared it will remove all of these notes.</li>" +
-          "<li>Any important information should be stored elseware in case of an error.</li></ul>", 1);
-        window.localStorage.alreadyVisited = true;
-      } else {
-        repaintStickys();
-      }
-    }());
+});
   </script>
   <script src="./resources/js/slideout.js"></script>
   <script>
