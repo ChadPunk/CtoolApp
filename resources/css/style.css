@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
-  background: #F9F9F9 !important;
+  background: #F9F9F9;
 }
 
 table, th, td {
@@ -164,7 +164,7 @@ input[type=text2] {
   border: none;
   outline: none;
   background: #E2E2E2;
-  padding: 15px;
+
 }
 
 input[type=submit] {
@@ -267,8 +267,10 @@ input[type=submit] {
   width: 80vw;
   background: #FFF;
   padding: 25px;
-  position: relative;
-  margin: 0 auto;
+  position: fixed;
+  margin: 20% auto; /* Will not center vertically and won't work in IE6/7. */
+  left: 0;
+  right: 0;
   display: none;
   border-radius: 15px;
 }
@@ -315,4 +317,72 @@ input[type=submit] {
   width: 80px;
   outline: none;
   margin: 5px;
+}
+
+textarea {
+  border-radius: 15px;
+  padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    }
+
+    .setting_head{
+      background: white;
+      color: grey;
+      border-bottom: 1px grey solid ;
+    }
+
+    .fix_line_setting {
+      font-size: 20px;
+      display: inline;
+      vertical-align: middle;
+    }
+
+    h2.fix_line_setting{
+      margin-left: 30px;
+    }
+
+    .settings_content{
+      background: white;
+      padding: 15px;
+      padding-top: 80px;
+    }
+
+    .settings_content i{
+      padding: 5px;
+      color: #FF5A5A;
+    }
+
+.settings_content p{
+  font-size: 17px;
+font-style: normal;
+}
+
+.settings_content h5{
+font-style: normal;
+}
+
+#change_name{
+  position: fixed;
+  margin: 20% auto; /* Will not center vertically and won't work in IE6/7. */
+  left: 0;
+  right: 0;
+  max-width: 500px;
+  z-index: 3;
+  width: 80vw;
+  background: #FFF;
+  padding: 25px;
+  display: none;
+  border-radius: 15px;
+}
+
+#change_name p{
+  text-align: justify;
+  padding: 25px;
+}
+
+.fa-user-o{
+  color: #FF5A5A;
 }
