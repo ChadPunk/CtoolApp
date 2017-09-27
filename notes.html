@@ -17,20 +17,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <style>
     .container {
-      margin: 2%;
+margin : 2%
     }
+
+    #appContainer h1{
+      padding: 15px;
+    }
+
     #appContainer {
-    	width: 50%;
-    	max-width: 600px;
+    	max-width: 645px;
     	min-width: 160px;
     	position: relative;
-    	margin: 2px auto;
+    	margin: 0 auto;
     	font: 14px/1em Helvetica,Arial,sans-serif;
     	padding: 0;
-    	background:#fff url("../images/bg.jpg") no-repeat 100% -26px;
+    	background:#fff;
     }
     .notesForm {
-    	margin: 10px 10px 10px 10px;
+      padding: 10px;
+      margin: 2%
     }
     .noteslist ul{
     	padding: 0;
@@ -87,7 +92,7 @@
         top: 18px;
     }
     .selected-note {
-    	/*text-decoration: line-through;*/
+    	color: red;
     }
     input, button {
     	vertical-align:middle;
@@ -186,10 +191,10 @@
 
   	<div class="container" ng-app="notesApp">
     	<div ng-controller="notesController" id="appContainer">
-    		<h3>Notes:</h3>
+    		<h1>Notes:</h1>
    		<div class="notesForm">
    			<form name="notesForm" ng-submit="addNote()">
-          <textarea name="paragraph_text" name="newnote" ng-model="newNote" placeholder="Enter your notes here ..." cols="50" rows="10" required /></textarea>
+          <textarea name="paragraph_text" name="newnote" ng-model="newNote" placeholder="Enter your notes here ..." cols="45" rows="10" required /></textarea>
    				<button type="submit" class="form-button" ng-disabled="notesForm.$invalid">Add Note</button>
    			</form>
 
@@ -203,7 +208,7 @@
   	 								<div ng-class="{'selected-note':note.selected}" class="note-text">{{note.text}}</div></label>
   	 							</div>
              						<div ng-show="editing">
-                          <textarea name="paragraph_text" ng-model="editNote" class="note-text" cols="50" rows="10" required /></textarea>
+                          <textarea name="paragraph_text" ng-model="editNote" class="note-text" rows="10" required /></textarea>
              							<i class="material-icons hidenEdit" ng-click="note.text = editNote; editing = false;">edit</i>
              						</div>
 
