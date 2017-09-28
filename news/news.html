@@ -6,15 +6,26 @@
     <style>
     body{
       margin: 0;
-    }
-
-    img{
       height: 100%;
       width: 100%;
+      overflow: hidden;
+    }
+
+    .img{
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      padding: 0;
+      border-radius: 15px;
+      background-image: url(http://carsons-nbt.thomaswebs.net/images/slidemon919.png);
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     </style>
   </head>
   <body>
-    <img src="news.png">
+    <div class="img"></div>
   </body>
 </html>

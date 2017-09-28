@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Slideout Demo</title>
+  <title></title>
   <meta http-equiv="cleartype" content="on">
   <meta name="MobileOptimized" content="320">
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="./resources/css/style.css">
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./resources/css/style.css">
+  <script src="./resources/js/functions.js"></script>
   <script src="http://momentjs.com/downloads/moment.js"></script>
-  <body onload="loadNews();">
+  <body onload="checkStyle()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -43,12 +44,13 @@
       <h2 class="fix_line">Home</h2>
     </header>
     <section class="content">
-      <div class="card1">
+      <div id="welcome_card">
+<i class="fa fa-times-circle-o fa-2x" aria-hidden="true" onclick="hideWelcome()"></i>
         <h1>Welcome</h1>
         <p>This app is for Carson's employees only</p>
       </div>
       <div class="card_news">
-        <p id="news_show"><iframe src="https://chadpunk.github.io/CtoolApp/news/news.html" alt="Failed to load new"></iframe></p>
+    <iframe src="news/news.html" alt="Failed to load new"></iframe>
       </div>
       <br/>
       <div class="fix">
