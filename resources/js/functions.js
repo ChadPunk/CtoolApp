@@ -78,3 +78,13 @@ function loadCheck() {
     document.getElementById("welcome_card").style.display = 'none';
   }
 }
+
+function chooseTheme(){
+  document.getElementById('ask_theme').style.display = 'block';
+  document.getElementById('black_out').style.display = 'block';
+}
+
+function closeDiv3() {
+  document.getElementById('ask_theme').style.display = 'none';
+  document.getElementById('black_out').style.display = 'none';
+}

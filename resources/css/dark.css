@@ -422,3 +422,63 @@ iframe{
   overflow: hidden;
   outline: none;
 }
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: white;
+}
+
+hr.half {
+    border: 0;
+    margin: 0px 35px 0px 35px;
+    height: 1px;
+    background: white;
+}
+
+#ask_theme {
+  position: fixed;
+  margin: 20% auto;
+  left: 0;
+  right: 0;
+  max-width: 500px;
+  z-index: 3;
+  width: 80vw;
+  background: #202026;
+  padding: 25px;
+  display: none;
+  border-radius: 15px;
+  color: white;
+}
+
+#ask_theme p {
+  text-align: justify;
+  padding: 25px;
+}
+
+.color_contain{
+  display: flex;
+  flex-grow: 1;
+  padding: 10px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.light_circle{
+  border: 3px solid grey;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #FFF;
+  margin: 15px;
+}
+
+.dark_circle{
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #202026;
+  margin: 15px;
+}

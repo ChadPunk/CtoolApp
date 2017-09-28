@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
   <script src="./resources/js/functions.js"></script>
-    <body onload="checkStyle()">
+  <body onload="checkStyle()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <style>
@@ -19,7 +19,6 @@
       margin: 0;
       padding: 0;
       font-family: 'Quicksand', sans-serif;
-      background-color: #FFF !important;
     }
   </style>
 </head>
@@ -47,6 +46,19 @@
       <!---Clear Data Box End--->
 
       <!---Change Name--->
+      <div id="black_out" onclick="closeDiv3()"></div>
+      <div id="ask_theme">
+        <div class="close_button" onclick="closeDiv3()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
+        <center>
+          <i class="fa fa-paint-brush fa-3x" aria-hidden="true"></i></center><center>
+          <div class="color_contain">
+          <div class="light_circle" onclick="changeThemeLight()"></div>
+          <div class="dark_circle" onclick="changeThemeDark()"></div></div>
+          <button class="ummNah" onclick="closeDiv3()"><i class="material-icons">Cancel</button></center>
+      </div>
+      <!---Change Name End--->
+
+      <!---Change Name--->
       <div id="black_out" onclick="closeDiv2()"></div>
       <div id="change_name">
         <div class="close_button" onclick="closeDiv2()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
@@ -62,14 +74,13 @@
       <!---Start Settings Page--->
       <section class="settings_content">
         <h5>User Settings</h5>
-        <hr>
-        <p onclick="AskToChange()"><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>Change Name</p>
-        <hr>
+        <hr class="style-one">
+        <p onclick="AskToChange()"><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>Name</p>
+        <hr class="half">
+        <p onclick="chooseTheme()"><i class="fa fa-eye fa-lg" aria-hidden="true"></i>App Theme</p>
         <h5>App Data</h5>
-        <hr>
+        <hr class="style-one">
         <p onclick="AskToClear()"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>Clear Saved Data</p>
-        <a href="#" onclick="changeThemeLight()">STYLE 1</a>
-        <a href="#" onclick="changeThemeDark()">STYLE 2</a>
       </section>
       <!---End Settings Page--->
 
