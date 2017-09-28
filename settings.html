@@ -8,8 +8,10 @@
   <meta name="MobileOptimized" content="320">
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./resources/css/style.css">
+  <script src="./resources/js/functions.js"></script>
+    <body onload="checkStyle()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <style>
@@ -25,13 +27,6 @@
 <body>
   <nav id="menu">
     <div class="logo">
-
-      <!---Bug--->
-      <script>
-        /* localStorage.setItem("icon", "resources/images/logo3.png");
-                      document.getElementById("image").src = localStorage.getItem('icon');*/
-      </script>
-      <!---Bug--->
 
       <header class="setting_head">
         <span class="fix_line_setting"><a href="index.html"><i class="fa fa-angle-left fa-lg" aria-hidden="true"></i></a></span>
@@ -73,46 +68,11 @@
         <h5>App Data</h5>
         <hr>
         <p onclick="AskToClear()"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>Clear Saved Data</p>
-
+        <a href="#" onclick="changeThemeLight()">STYLE 1</a>
+        <a href="#" onclick="changeThemeDark()">STYLE 2</a>
       </section>
       <!---End Settings Page--->
 
-      <script>
-        function save_data() {
-          var input = document.getElementById("saveName");
-          localStorage.setItem("name", input.value);
-          location.reload();
-        }
-
-        function AskToChange() {
-          document.getElementById('black_out').style.display = 'block';
-          document.getElementById('change_name').style.display = 'block';
-        }
-
-        function closeDiv2() {
-          document.getElementById('change_name').style.display = 'none';
-          document.getElementById('black_out').style.display = 'none';
-        }
-
-        function AskToClear() {
-          document.getElementById('settings_clear').style.display = 'block';
-          document.getElementById('black_out').style.display = 'block';
-        }
-
-        function closeDiv() {
-          document.getElementById('settings_clear').style.display = 'none';
-          document.getElementById('black_out').style.display = 'none';
-        }
-
-        function clearData() {
-          localStorage.clear();
-          alert("Data Cleared")
-          document.getElementById('settings_clear').style.display = 'none';
-          document.getElementById('black_out').style.display = 'none';
-          localStorage.setItem("name", "Guest");
-          location.reload();
-        }
-      </script>
       <script>
         var a = document.getElementsByTagName("a");
         for (var i = 0; i < a.length; i++) {

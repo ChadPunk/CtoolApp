@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
-  background: #F9F9F9;
+  background: #202026 !important;
 }
 
 table, th, td {
@@ -278,11 +278,12 @@ input[type=submit] {
   padding: 25px;
   position: fixed;
   margin: 20% auto;
-  /* Will not center vertically and won't work in IE6/7. */
   left: 0;
   right: 0;
   display: none;
   border-radius: 15px;
+  background: #202026;
+  color: white;
 }
 
 .setting_p {
@@ -339,8 +340,8 @@ textarea {
 }
 
 .setting_head {
-  background: white;
-  color: grey;
+  background: #202026;
+  color: white;
   border-bottom: 1px grey solid;
 }
 
@@ -355,9 +356,10 @@ h2.fix_line_setting {
 }
 
 .settings_content {
-  background: white;
+  background: #202026;
   padding: 15px;
   padding-top: 80px;
+  color: white;
 }
 
 .settings_content i {
@@ -387,6 +389,8 @@ h2.fix_line_setting {
   padding: 25px;
   display: none;
   border-radius: 15px;
+  background: #202026;
+  color: white;
 }
 
 #change_name p {
@@ -399,15 +403,15 @@ h2.fix_line_setting {
 }
 
 .setting_head a {
-  color: grey;
+  color: white;
 }
 
 .setting_head a:active {
-  color: grey;
+  color: white;
 }
 
 .setting_head a:hover {
-  color: grey;
+  color: white;
 }
 
 iframe{
