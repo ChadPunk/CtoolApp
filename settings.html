@@ -13,12 +13,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
-    background-color: #FFF !important;
-  }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #FFF !important;
+    }
   </style>
 </head>
 
@@ -29,7 +29,7 @@
       <!---Bug--->
       <script>
         /* localStorage.setItem("icon", "resources/images/logo3.png");
-              document.getElementById("image").src = localStorage.getItem('icon');*/
+                      document.getElementById("image").src = localStorage.getItem('icon');*/
       </script>
       <!---Bug--->
 
@@ -38,34 +38,34 @@
         <h2 class="fix_line_setting">Settings</h2>
       </header>
 
-        <!---Clear Data Div Box--->
-        <div id="black_out" onclick="closeDiv()"></div>
-        <div id="settings_clear">
-          <div class="close_button" onclick="closeDiv()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
-          <center>
-            <i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i></center>
-          <p class="setting_p">Are you sure you would like to delete all app data? If you do this you will loose all of your notes and various app data. We don't recommend you do this unless instructed by IT.</p>
-          <center>
-            <button class="sureYnot" onclick="clearData()"><i class="material-icons">Yes</button>
-            <button class="ummNah" onclick="closeDiv()"><i class="material-icons">Cancel</button></center>
-        </div>
-        <!---Clear Data Box End--->
+      <!---Clear Data Div Box--->
+      <div id="black_out" onclick="closeDiv()"></div>
+      <div id="settings_clear">
+        <div class="close_button" onclick="closeDiv()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
+        <center>
+          <i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i></center>
+        <p class="setting_p">Are you sure you would like to delete all app data? If you do this you will loose all of your notes and various app data. We don't recommend you do this unless instructed by IT.</p>
+        <center>
+          <button class="sureYnot" onclick="clearData()"><i class="material-icons">Yes</button>
+          <button class="ummNah" onclick="closeDiv()"><i class="material-icons">Cancel</button></center>
+      </div>
+      <!---Clear Data Box End--->
 
-        <!---Change Name--->
-        <div id="black_out" onclick="closeDiv()"></div>
-        <div id="change_name">
-          <div class="close_button" onclick="closeDiv2()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
-          <center>
-            <i class="fa fa-user-o fa-3x" aria-hidden="true"></i></center>
-          <p class="setting_p"><input type='text' name="name" id="saveName" placeholder="Enter Name..." /></p>
-          <center>
-            <button class="sureYnot" onclick="save_data()"><i class="material-icons">Save</button>
-            <button class="ummNah" onclick="closeDiv2()"><i class="material-icons">Cancel</button></center>
-        </div>
-        <!---Change Name End--->
+      <!---Change Name--->
+      <div id="black_out" onclick="closeDiv2()"></div>
+      <div id="change_name">
+        <div class="close_button" onclick="closeDiv2()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
+        <center>
+          <i class="fa fa-user-o fa-3x" aria-hidden="true"></i></center>
+        <p class="setting_p"><input type='text' name="name" id="saveName" placeholder="Enter Name..." /></p>
+        <center>
+          <button class="sureYnot" onclick="save_data()"><i class="material-icons">Save</button>
+          <button class="ummNah" onclick="closeDiv2()"><i class="material-icons">Cancel</button></center>
+      </div>
+      <!---Change Name End--->
 
-        <!---Start Settings Page--->
-<section class="settings_content">
+      <!---Start Settings Page--->
+      <section class="settings_content">
         <h5>User Settings</h5>
         <hr>
         <p onclick="AskToChange()"><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>Change Name</p>
@@ -74,25 +74,25 @@
         <hr>
         <p onclick="AskToClear()"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>Clear Saved Data</p>
 
-              </section>
-        <!---End Settings Page--->
+      </section>
+      <!---End Settings Page--->
 
       <script>
-      function save_data() {
-        var input = document.getElementById("saveName");
-        localStorage.setItem("name", input.value);
-        location.reload();
-      }
+        function save_data() {
+          var input = document.getElementById("saveName");
+          localStorage.setItem("name", input.value);
+          location.reload();
+        }
 
-      function AskToChange() {
-        document.getElementById('black_out').style.display = 'block';
-        document.getElementById('change_name').style.display = 'block';
-      }
+        function AskToChange() {
+          document.getElementById('black_out').style.display = 'block';
+          document.getElementById('change_name').style.display = 'block';
+        }
 
-      function closeDiv2() {
-        document.getElementById('change_name').style.display = 'none';
-        document.getElementById('black_out').style.display = 'none';
-      }
+        function closeDiv2() {
+          document.getElementById('change_name').style.display = 'none';
+          document.getElementById('black_out').style.display = 'none';
+        }
 
         function AskToClear() {
           document.getElementById('settings_clear').style.display = 'block';

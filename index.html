@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
   <link rel="stylesheet" href="./resources/css/style.css">
   <script src="http://momentjs.com/downloads/moment.js"></script>
+  <body onload="loadNews();">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -46,6 +47,9 @@
         <h1>Welcome</h1>
         <p>This app is for Carson's employees only</p>
       </div>
+      <div class="card_news">
+        <p id="news_show"><iframe src="https://chadpunk.github.io/CtoolApp/news/news.html" alt="Failed to load new"></iframe></p>
+      </div>
       <br/>
       <div class="fix">
         <div class="cols">
@@ -67,12 +71,14 @@
           <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
           <P id="demo"></P>
         </div>
+
     </section>
 
     <footer class="fabButton" onclick="location.reload();">
       <i class="fa fa-refresh fa-2x" aria-hidden="true"></i>
     </footer>
   </main>
+
   <script src="./resources/js/slideout.js"></script>
   <script>
     var slideout = new Slideout({
@@ -109,6 +115,7 @@ if (localStorage.getItem("name") === null) {
     location.reload();
   }
   </script>
+
 </body>
 
 </html>

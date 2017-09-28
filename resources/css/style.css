@@ -160,11 +160,9 @@ input[type=text2] {
   text-align: center;
   width: 100%;
   height: 300px;
-
   border: none;
   outline: none;
   background: #E2E2E2;
-
 }
 
 input[type=submit] {
@@ -183,11 +181,22 @@ input[type=submit] {
   width: 80vw;
   max-width: 600px;
   margin: 0 auto;
-  padding: 25px;
+  padding: 12px;
   border-radius: 15px;
   -webkit-box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
   -moz-box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
   box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
+}
+
+.card_news{
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  background: #fff;
+  width: 80vw;
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 15px;
 }
 
 .card1 h1 {
@@ -268,7 +277,8 @@ input[type=submit] {
   background: #FFF;
   padding: 25px;
   position: fixed;
-  margin: 20% auto; /* Will not center vertically and won't work in IE6/7. */
+  margin: 20% auto;
+  /* Will not center vertically and won't work in IE6/7. */
   left: 0;
   right: 0;
   display: none;
@@ -322,51 +332,52 @@ input[type=submit] {
 textarea {
   border-radius: 15px;
   padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    outline: none;
-    }
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
 
-    .setting_head{
-      background: white;
-      color: grey;
-      border-bottom: 1px grey solid ;
-    }
+.setting_head {
+  background: white;
+  color: grey;
+  border-bottom: 1px grey solid;
+}
 
-    .fix_line_setting {
-      font-size: 20px;
-      display: inline;
-      vertical-align: middle;
-    }
+.fix_line_setting {
+  font-size: 20px;
+  display: inline;
+  vertical-align: middle;
+}
 
-    h2.fix_line_setting{
-      margin-left: 30px;
-    }
+h2.fix_line_setting {
+  margin-left: 30px;
+}
 
-    .settings_content{
-      background: white;
-      padding: 15px;
-      padding-top: 80px;
-    }
+.settings_content {
+  background: white;
+  padding: 15px;
+  padding-top: 80px;
+}
 
-    .settings_content i{
-      padding: 5px;
-      color: #FF5A5A;
-    }
+.settings_content i {
+  padding: 5px;
+  color: #FF5A5A;
+}
 
-.settings_content p{
+.settings_content p {
   font-size: 17px;
-font-style: normal;
+  font-style: normal;
 }
 
-.settings_content h5{
-font-style: normal;
+.settings_content h5 {
+  font-style: normal;
 }
 
-#change_name{
+#change_name {
   position: fixed;
-  margin: 20% auto; /* Will not center vertically and won't work in IE6/7. */
+  margin: 20% auto;
+  /* Will not center vertically and won't work in IE6/7. */
   left: 0;
   right: 0;
   max-width: 500px;
@@ -378,11 +389,31 @@ font-style: normal;
   border-radius: 15px;
 }
 
-#change_name p{
+#change_name p {
   text-align: justify;
   padding: 25px;
 }
 
-.fa-user-o{
+.fa-user-o {
   color: #FF5A5A;
+}
+
+.setting_head a {
+  color: grey;
+}
+
+.setting_head a:active {
+  color: grey;
+}
+
+.setting_head a:hover {
+  color: grey;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: none;
+  outline: none;
 }
