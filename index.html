@@ -7,11 +7,11 @@
   <meta name="MobileOptimized" content="320">
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" href="./resources/css/style.css">
+  <link rel="stylesheet" href="./resources/css/style.css">
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
   <script src="./resources/js/functions.js"></script>
   <script src="http://momentjs.com/downloads/moment.js"></script>
-  <body onload="checkStyle()">
+  <body onload="checkScript()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -111,12 +111,6 @@
     }
   </script>
 
-  <script>
-if (localStorage.getItem("name") === null) {
-    localStorage.setItem("name", "Guest");
-    location.reload();
-  }
-  </script>
 
 </body>
 

@@ -1,3 +1,16 @@
+function checkScript(){
+  checkStyle();
+  loadCheck();
+  checkName();
+}
+
+function checkName(){
+  if (localStorage.getItem("name") === null) {
+      localStorage.setItem("name", "Guest");
+      location.reload();
+    }
+}
+
 function save_data() {
   var input = document.getElementById("saveName");
   localStorage.setItem("name", input.value);
