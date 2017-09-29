@@ -6,9 +6,32 @@ body {
   background: #F9F9F9;
 }
 
-table, th, td {
-  border: .5px solid black;
-  padding: 20px;
+#myInput {
+  width: 50vw;
+  font-size: 16px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
 }
 
 .slideout-menu {
@@ -48,7 +71,6 @@ header {
 }
 
 @keyframes slideInFromTop {
-  /*Add to other style sheet animation.css*/
   0% {
     transform: translateY(-100%);
   }
@@ -188,7 +210,7 @@ input[type=submit] {
   box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
 }
 
-.card_news{
+.card_news {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   background: #fff;
@@ -278,7 +300,6 @@ input[type=submit] {
   padding: 25px;
   position: fixed;
   margin: 20% auto;
-  /* Will not center vertically and won't work in IE6/7. */
   left: 0;
   right: 0;
   display: none;
@@ -299,7 +320,7 @@ input[type=submit] {
   right: 0;
   bottom: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
   z-index: 2;
 }
 
@@ -358,12 +379,12 @@ h2.fix_line_setting {
 }
 
 .settings_content {
-  top:0;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   position: absolute;
-  background: white;
+  background: #f2f2f2;
   padding: 15px;
   padding-top: 80px;
 }
@@ -378,14 +399,15 @@ h2.fix_line_setting {
   font-style: normal;
 }
 
-.settings_content h5 {
+.settings_content h1 {
   font-style: normal;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 #change_name {
   position: fixed;
   margin: 20% auto;
-  /* Will not center vertically and won't work in IE6/7. */
   left: 0;
   right: 0;
   max-width: 500px;
@@ -418,7 +440,47 @@ h2.fix_line_setting {
   color: grey;
 }
 
-iframe{
+.setting_circle{
+  background: white;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  float:left;
+  Margin-right: 1rem;
+}
+
+.fixP{
+  font-size: 28px !important;
+  font-weight: bold;
+  -webkit-margin-before: 8px !important;
+    -webkit-margin-after: 0px !important;
+    -webkit-margin-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+}
+
+.settings_flex{
+display: flex;
+align-items: center;
+    justify-content: center;
+}
+
+.settings_plate{
+  background: #fff;
+  padding: 15px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin: 2%;
+  border-radius: 15px;
+}
+.fa-heart{
+  position: relative;
+  top: 50%;
+  transform: translateY(-68%);
+  margin: 16px;
+}
+
+iframe {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -428,16 +490,16 @@ iframe{
 }
 
 hr.style-one {
-    border: 0;
-    height: 1px;
-    background: grey;
+  border: 0;
+  height: 1px;
+  background: grey;
 }
 
 hr.half {
-    border: 0;
-    margin: 0px 35px 0px 35px;
-    height: 1px;
-    background: grey;
+  border: 0;
+  margin: 0px 35px 0px 35px;
+  height: 1px;
+  background: grey;
 }
 
 #ask_theme {
@@ -459,7 +521,7 @@ hr.half {
   padding: 25px;
 }
 
-.color_contain{
+.color_contain {
   display: flex;
   flex-grow: 1;
   padding: 10px;
@@ -468,8 +530,8 @@ hr.half {
   justify-content: center;
 }
 
-.light_circle{
-    margin: 15px;
+.light_circle {
+  margin: 15px;
   border: 3px solid black;
   border-radius: 50%;
   width: 50px;
@@ -477,11 +539,149 @@ hr.half {
   background: #FFF;
 }
 
-.dark_circle{
-    margin: 15px;
+.dark_circle {
+  margin: 15px;
   border: 3px solid grey;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   background: #202026;
 }
+
+/*Notes*/
+
+    #appContainer h1{
+      padding: 15px;
+    }
+
+    #appContainer {
+      width: 50vw;
+      position: absolute;
+      margin: 0 auto;
+    	margin: 0 auto;
+    	font: 14px/1em Helvetica,Arial,sans-serif;
+    	padding: 0;
+    	background:#fff;
+    }
+    .notesForm {
+      padding: 10px;
+      margin: 2%
+    }
+    .noteslist ul{
+    	padding: 0;
+    	margin: 0;
+    }
+    .noteslist li {
+    	list-style: none;
+    	padding: 5px 0;
+    	margin: 0;
+    	width: 100%;
+    }
+    .noteslist .icon{
+    	text-align: right;
+        display: inline-block;
+        vertical-align: top;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+    }
+    .noteslist .icon i{
+    	font-size: 20px;
+    	padding: 0 3px;
+    }
+    .noteslist .icon i:hover{
+    	color: #0077bb;
+    }
+    .each-note {
+    	border: 1px solid #ccc;
+    	padding: 10px 6px;
+    	width: auto;
+    	position: relative;
+    }
+    .each-note:hover {
+    	background: #eee;
+    }
+    .each-note label{
+    	width:76%;
+    	display: inline-block;
+    }
+    .each-note .note-check {
+    	display: inline-block;
+    	width: 15px;
+    }
+    .each-note .note-text {
+    	display: inline-block;
+        width: 87% !important;
+        vertical-align: top;
+        word-break: break-word;
+    }
+    .each-note .hidenEdit{
+    	position: absolute;
+        text-align: right;
+        right: 10px;
+        top: 18px;
+    }
+    .selected-note {
+    	color: red;
+    }
+    input, button {
+    	vertical-align:middle;
+    	font-size: 15px;
+    	box-sizing:border-box;
+    	border-radius: 6px;
+    }
+    .notesForm input[type="text"] {
+       	border: 1px solid #ccc;
+        line-height: 2.5;
+        padding: 0;
+        text-indent: 10px;
+        width: 100%;
+    }
+    .notesForm input[type="text"].ng-invalid {
+    	border: 1px solid #ff0000;
+    }
+    .app-button, .form-button {
+    	background: #0077bb;
+    	border: none;
+        line-height: 2.5;
+        padding: 0 30px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.4s ease-in 0s;
+        width:100%;
+        margin: 10px 0;
+    }
+    .app-button {
+    	background: #ccc;
+    	color: #fff;
+    	width: 48%;
+        margin-left: 5px;
+    }
+    .form-button:hover {
+    	background: #0077ff;
+    }
+    .app-button:hover {
+    	background: #aaa;
+    }
+    /* css for mobile device */
+    @media only screen and (max-width : 636px) {
+    	#appContainer {
+    		width: 100%;
+    		margin: 2px -10px;
+    	}
+    	.each-note .note-text {
+    	    width: 87% !important;
+    	}
+    	.app-button {
+    		width: 100%;
+    	    margin-left: 0;
+    	}
+    }
+    /* css for tablet device */
+    @media only screen  and (max-width : 1024px) {
+    	#appContainer {
+    		width: 100%;
+    	}
+    }
+/*Notes End*/

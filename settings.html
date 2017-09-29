@@ -11,16 +11,17 @@
   <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
   <link rel="stylesheet" href="./resources/css/font-awesome.min.css">
   <script src="./resources/js/functions.js"></script>
-  <body onload="checkStyle()">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-    }
-  </style>
+  <body onload="checkStyle()">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Quicksand', sans-serif;
+      }
+    </style>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
       </header>
 
       <!---Clear Data Div Box--->
-      <div id="black_out" onclick="closeDiv()"></div>
+      <div id="black_out"></div>
       <div id="settings_clear">
         <div class="close_button" onclick="closeDiv()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
         <center>
@@ -46,20 +47,22 @@
       <!---Clear Data Box End--->
 
       <!---Change Name--->
-      <div id="black_out" onclick="closeDiv3()"></div>
+      <div id="black_out"></div>
       <div id="ask_theme">
         <div class="close_button" onclick="closeDiv3()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
         <center>
-          <i class="fa fa-paint-brush fa-3x" aria-hidden="true"></i></center><center>
+          <i class="fa fa-paint-brush fa-3x" aria-hidden="true"></i> <br><br>Select a Theme</center>
+        <center>
           <div class="color_contain">
-          <div class="light_circle" onclick="changeThemeLight()"></div>
-          <div class="dark_circle" onclick="changeThemeDark()"></div></div>
+            <div class="light_circle" onclick="changeThemeLight()"></div>
+            <div class="dark_circle" onclick="changeThemeDark()"></div>
+          </div>
           <button class="ummNah" onclick="closeDiv3()"><i class="material-icons">Cancel</button></center>
       </div>
       <!---Change Name End--->
 
       <!---Change Name--->
-      <div id="black_out" onclick="closeDiv2()"></div>
+      <div id="black_out"></div>
       <div id="change_name">
         <div class="close_button" onclick="closeDiv2()"><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></div><br>
         <center>
@@ -73,14 +76,26 @@
 
       <!---Start Settings Page--->
       <section class="settings_content">
-        <h5>User Settings</h5>
-        <hr class="style-one">
-        <p onclick="AskToChange()"><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>Name</p>
-        <hr class="half">
-        <p onclick="chooseTheme()"><i class="fa fa-eye fa-lg" aria-hidden="true"></i>App Theme</p>
-        <h5>App Data</h5>
-        <hr class="style-one">
-        <p onclick="AskToClear()"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>Clear Saved Data</p>
+        <div class="setting_circle">
+          <i class="fa fa-heart fa-3x" aria-hidden="true"></i></div>
+        <p class="fixP">Welcome</p>
+        <p class="fixP">
+          <script type="text/javascript">
+            document.write(localStorage.getItem('name'));
+          </script>
+        </p>
+        <br><br>
+        <div class="settings_flex">
+          <div class="settings_plate" onclick="AskToChange()">
+          <p><i class="fa fa-user-circle fa-lg" aria-hidden="true"></i><br>Name</p></div>
+          <div class="settings_plate" onclick="chooseTheme()">
+          <p><i class="fa fa-eye fa-lg" aria-hidden="true"></i><br>App Theme</p></div></div>
+          <h2>App Data</h2>
+          <div class="settings_flex">
+          <div class="settings_plate" onclick="AskToClear()">
+          <p><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i><br>Clear Saved Data</p></div>
+
+        </div>
       </section>
       <!---End Settings Page--->
 

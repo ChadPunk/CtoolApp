@@ -6,9 +6,29 @@ body {
   background: #202026 !important;
 }
 
-table, th, td {
-  border: .5px solid black;
-  padding: 20px;
+#myInput {
+  width: 50vw;
+  font-size: 16px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  color: white;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid grey;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
 }
 
 .slideout-menu {
@@ -19,7 +39,7 @@ table, th, td {
   bottom: 0;
   right: 0;
   z-index: 0;
-  background: #F2F2F2;
+  background: #424242;
   width: 256px;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -40,7 +60,7 @@ table, th, td {
 }
 
 header {
-  background: maroon;
+  background: #424242;
   padding: 15px;
   margin: 0;
   width: 100%;
@@ -48,7 +68,6 @@ header {
 }
 
 @keyframes slideInFromTop {
-  /*Add to other style sheet animation.css*/
   0% {
     transform: translateY(-100%);
   }
@@ -92,7 +111,7 @@ h2.fix_line {
 
 .logo {
   width: 100%;
-  background: #EEEEEE;
+  background: #424242;
 }
 
 .logo img {
@@ -101,6 +120,7 @@ h2.fix_line {
 }
 
 .logo h2 {
+  color: white;
   text-align: center;
   padding: 5px;
 }
@@ -120,11 +140,11 @@ li {
   vertical-align: middle;
   padding: 15px;
   margin: 10px;
-  background: #EEEEEE;
+  background: #202026;
 }
 
 li a, li a:hover {
-  color: black;
+    color: white;
   text-decoration: none;
 }
 
@@ -177,21 +197,19 @@ input[type=submit] {
 #welcome_card {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background: #fff;
+  background: #424242;
   width: 80vw;
   max-width: 600px;
   margin: 0 auto;
   padding: 12px;
   border-radius: 15px;
-  -webkit-box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
-  -moz-box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
-  box-shadow: -1px 0px 36px 29px rgba(241, 242, 244, 1);
+  color: white;
 }
 
-.card_news{
+.card_news {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background: #fff;
+  background: #424242;
   width: 85vw;
   max-width: 600px;
   height: auto;
@@ -206,7 +224,7 @@ input[type=submit] {
 .order_status {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
-  background: #fff;
+  background: #424242;
   width: 80px;
   margin: 0 auto;
   padding: 25px;
@@ -228,12 +246,10 @@ input[type=submit] {
   height: 130px;
   max-width: 130px !important;
   text-align: center;
-  background: white;
+  background: #424242;
   margin: 5px auto;
   padding: 20px;
-  -webkit-box-shadow: -1px 0px 36px 4px rgba(241, 242, 244, 1);
-  -moz-box-shadow: -1px 0px 36px 4px rgba(241, 242, 244, 1);
-  box-shadow: -1px 0px 36px 4px rgba(241, 242, 244, 1);
+  color: white;
 }
 
 .fa-check {
@@ -274,7 +290,6 @@ input[type=submit] {
   max-width: 500px;
   z-index: 3;
   width: 80vw;
-  background: #FFF;
   padding: 25px;
   position: fixed;
   margin: 20% auto;
@@ -300,7 +315,7 @@ input[type=submit] {
   right: 0;
   bottom: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
   z-index: 2;
 }
 
@@ -332,6 +347,8 @@ input[type=submit] {
 
 textarea {
   border-radius: 15px;
+  border: none;
+  width: 100%;
   padding: 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -379,13 +396,11 @@ h2.fix_line_setting {
 #change_name {
   position: fixed;
   margin: 20% auto;
-  /* Will not center vertically and won't work in IE6/7. */
   left: 0;
   right: 0;
   max-width: 500px;
   z-index: 3;
   width: 80vw;
-  background: #FFF;
   padding: 25px;
   display: none;
   border-radius: 15px;
@@ -414,7 +429,49 @@ h2.fix_line_setting {
   color: white;
 }
 
-iframe{
+.setting_circle{
+  background: #424242;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  float:left;
+  Margin-right: 1rem;
+}
+
+.fixP{
+  font-size: 28px !important;
+  font-weight: bold;
+  -webkit-margin-before: 8px !important;
+    -webkit-margin-after: 0px !important;
+    -webkit-margin-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+}
+
+.settings_flex{
+display: flex;
+align-items: center;
+    justify-content: center;
+}
+
+.settings_plate{
+  background: #424242;
+  padding: 15px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  margin: 2%;
+  border-radius: 15px;
+  color: white;
+}
+.fa-heart{
+  position: relative;
+  top: 50%;
+  transform: translateY(-68%);
+  margin: 16px;
+}
+
+
+iframe {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -424,16 +481,16 @@ iframe{
 }
 
 hr.style-one {
-    border: 0;
-    height: 1px;
-    background: white;
+  border: 0;
+  height: 1px;
+  background: white;
 }
 
 hr.half {
-    border: 0;
-    margin: 0px 35px 0px 35px;
-    height: 1px;
-    background: white;
+  border: 0;
+  margin: 0px 35px 0px 35px;
+  height: 1px;
+  background: white;
 }
 
 #ask_theme {
@@ -456,7 +513,7 @@ hr.half {
   padding: 25px;
 }
 
-.color_contain{
+.color_contain {
   display: flex;
   flex-grow: 1;
   padding: 10px;
@@ -465,7 +522,7 @@ hr.half {
   justify-content: center;
 }
 
-.light_circle{
+.light_circle {
   border: 3px solid grey;
   border-radius: 50%;
   width: 50px;
@@ -474,7 +531,7 @@ hr.half {
   margin: 15px;
 }
 
-.dark_circle{
+.dark_circle {
   border: 3px solid white;
   border-radius: 50%;
   width: 50px;
@@ -482,3 +539,142 @@ hr.half {
   background: #202026;
   margin: 15px;
 }
+
+/*Notes*/
+
+
+    #appContainer h1{
+      padding: 15px;
+    }
+
+    #appContainer {
+    	width: 50vw;
+    	position: absolute;
+    	margin: 0 auto;
+    	font: 14px/1em Helvetica,Arial,sans-serif;
+    	padding: 5px;
+    	background:#424242;
+      color: white;
+    }
+    .notesForm {
+      padding: 10px;
+      margin: 2%
+    }
+    .noteslist ul{
+    	padding: 0;
+    	margin: 0;
+    }
+    .noteslist li {
+    	list-style: none;
+    	padding: 5px 0;
+    	margin: 0;
+    	width: 100%;
+    }
+    .noteslist .icon{
+    	text-align: right;
+        display: inline-block;
+        vertical-align: top;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+    }
+    .noteslist .icon i{
+    	font-size: 20px;
+    	padding: 0 3px;
+    }
+    .noteslist .icon i:hover{
+    	color: #0077bb;
+    }
+    .each-note {
+    	border: 1px solid #ccc;
+    	padding: 10px 6px;
+    	width: auto;
+    	position: relative;
+    }
+    .each-note:hover {
+    	background: #eee;
+    }
+    .each-note label{
+    	width:76%;
+    	display: inline-block;
+    }
+    .each-note .note-check {
+    	display: inline-block;
+    	width: 15px;
+    }
+    .each-note .note-text {
+    	display: inline-block;
+        width: 87% !important;
+        vertical-align: top;
+        word-break: break-word;
+    }
+    .each-note .hidenEdit{
+    	position: absolute;
+        text-align: right;
+        right: 10px;
+        top: 18px;
+    }
+    .selected-note {
+    	color: red;
+    }
+    input, button {
+    	vertical-align:middle;
+    	font-size: 15px;
+    	box-sizing:border-box;
+    	border-radius: 6px;
+    }
+    .notesForm input[type="text"] {
+       	border: 1px solid #ccc;
+        line-height: 2.5;
+        padding: 0;
+        text-indent: 10px;
+        width: 100%;
+    }
+    .notesForm input[type="text"].ng-invalid {
+    	border: 1px solid #ff0000;
+    }
+    .app-button, .form-button {
+    	background: #0077bb;
+    	border: none;
+        line-height: 2.5;
+        padding: 0 30px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.4s ease-in 0s;
+        width:100%;
+        margin: 10px 0;
+    }
+    .app-button {
+    	background: #ccc;
+    	color: #fff;
+    	width: 48%;
+        margin-left: 5px;
+    }
+    .form-button:hover {
+    	background: #0077ff;
+    }
+    .app-button:hover {
+    	background: #aaa;
+    }
+    /* css for mobile device */
+    @media only screen and (max-width : 636px) {
+    	#appContainer {
+    		width: 100%;
+    		margin: 2px -10px;
+    	}
+    	.each-note .note-text {
+    	    width: 87% !important;
+    	}
+    	.app-button {
+    		width: 100%;
+    	    margin-left: 0;
+    	}
+    }
+    /* css for tablet device */
+    @media only screen  and (max-width : 1024px) {
+    	#appContainer {
+    		width: 100%;
+    	}
+    }
+/*Notes End*/
