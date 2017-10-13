@@ -307,6 +307,9 @@ input[type=submit] {
 }
 
 .setting_p {
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   text-align: justify;
   padding: 25px;
 }
@@ -352,6 +355,7 @@ input[type=submit] {
 
 textarea {
   border-radius: 15px;
+  width: 100%;
   padding: 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -558,7 +562,6 @@ hr.half {
       width: 50vw;
       position: absolute;
       margin: 0 auto;
-    	margin: 0 auto;
     	font: 14px/1em Helvetica,Arial,sans-serif;
     	padding: 0;
     	background:#fff;
